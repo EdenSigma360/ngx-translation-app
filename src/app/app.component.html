@@ -3,4 +3,56 @@
   <app-select-language></app-select-language>
   <app-comp-a></app-comp-a>
   <app-comp-b></app-comp-b>
+
+  <div>{{ "Hello world" | translate }}</div>
+
+  *****************START*********************
+  <h1>{{ "demo.title" | translate }}</h1>
+  <h1 translate>demo.title</h1>
+  *******************END*******************
+
+  <p>{{ "demo.text" | translate }}</p>
+
+  *****************START*********************
+  <p>{{ "demo.greeting" | translate: { name: "Andreas" } }}</p>
+  <p translate [translateParams]="{ name: 'Eden' }">demo.greeting</p>
+  <!-- DOES NOT WORK: -->
+  <!-- <p [translate]="'demo.greeting'" [translateParams]="{ name: 'Andreas' }"></p> -->
+  *******************END*******************
+
+  <ul>
+    <li translate="" [translateParams]="{ count: 1 }">icu.pluralization</li>
+    <li>{{ "icu.pluralization" | translate: { count: 2 } }}</li>
+  </ul>
+
+  <ul>
+    <li translate [translateParams]="{ gender: 'male', product: 'BabelEdit' }">
+      icu.select
+    </li>
+    <li>
+      {{ "icu.select" | translate: { gender: "other", product: "BabelEdit" } }}
+    </li>
+    <!-- DOES NOT WORK: -->
+    <!-- <li
+      [translate]="'icu.select'"
+      [translateParams]="{ gender: 'female', product: 'BabelEdit' }"
+    ></li> -->
+  </ul>
+
+  <div [innerHTML]="'demo.paragraph' | translate"></div>
+
+  <ul>
+    <li translate [translateParams]="{ count: 0 }">things</li>
+    <li translate [translateParams]="{ count: 1 }">things</li>
+    <li>{{ "things" | translate: "{ count: 2 }" }}</li>
+  </ul>
+  <ul>
+    <li translate [translateParams]="{ gender: 'female', how: 'influential' }">
+      people
+    </li>
+    <li translate [translateParams]="{ gender: 'male', how: 'funny' }">
+      people
+    </li>
+    <li>{{ "people" | translate: "{ how: 'affectionate' }" }}</li>
+  </ul>
 </div>

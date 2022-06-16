@@ -1,4 +1,22 @@
 {
     "compA": "Component A works",
-    "compB": "Component B works"
+    "compB": "Component B works",
+    "hello world": "Hello world",
+    "demo": {
+        "title": "Translation demo",
+        "text": "This is a simple demonstration app for ngx-translate",
+        "greeting": "Hello {name}!",
+        "paragraph": "Try <strong>BabelEdit</strong>! This translation editor is made for <strong>ngx-translate</strong>!"
+    },
+    "icu": {
+		"pluralization": "There {count, plural, =0{is no apple} one{is one apple} other{there are several apples}}.",
+		"select": "{gender, select, male{He uses} female{She uses} other{They use }} {product}"
+	},
+	"messagebox": {
+		"warning": {
+			"text": "Warning!"
+		}
+	},
+    "things": "There {count, plural, =0{is} one{is} other{are}} {count, plural, =0{} one{a} other{several}} {count, plural, =0{nothing} one{thing} other{things}}",
+    "people": "{gender, select, male{He is} female{She is} other{They are}} {how}"
 }

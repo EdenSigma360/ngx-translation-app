@@ -1,4 +1,20 @@
 {
     "compA": "קומפונטה A עובדת",
-    "compB": "קומפונטה B עובדת"
+    "compB": "קומפונטה B עובדת",
+    "hello world": "שלום לכולם",
+    "demo": {
+        "title": "הדגמת תרגום",
+        "text": "זוהי אפליקציית הדגמה פשוטה עבור ngx-translate",
+        "greeting": "שלום {name}!",
+        "paragraph": "נסה <strong>BabelEdit</strong>! עורך תרגום זה מיועד <strong>ngx-translate</strong>!"
+    },
+    "icu": {
+		"pluralization": "יש {count, plural, =0{אפס תפוחים} one{תפוח אחד} other{כמה תפוחים}}.",
+		"select": "{gender, select, male{הוא משתמש} female{היא משתמשת} other{הם משתמשים }} {product}"
+	},
+	"messagebox": {
+		"warning": {
+			"text": "Warning!"
+		}
+	}
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {
+  TranslateCompiler,
   TranslateLoader,
   TranslateModule,
   TranslateService,
@@ -12,6 +13,7 @@ import {
   TranslateCacheSettings,
   TranslateCacheService,
 } from 'ngx-translate-cache';
+import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 
 @NgModule({
   declarations: [],
@@ -23,6 +25,11 @@ import {
         provide: TranslateLoader,
         useFactory: translateLoaderFactory,
         deps: [HttpClient],
+      },
+      // compiler configuration
+      compiler: {
+        provide: TranslateCompiler,
+        useClass: TranslateMessageFormatCompiler,
       },
     }),
     TranslateCacheModule.forRoot({
@@ -42,10 +49,9 @@ export class I18nModule {
     translateCacheService: TranslateCacheService
   ) {
     translateCacheService.init();
-    translate.addLangs(['en', 'ru', 'he']);
+    translate.addLangs(['en', 'ru', 'he', 'du']);
     const browserLang =
       translateCacheService.getCachedLanguage() || translate.getBrowserLang();
-    // const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|ru|he/) ? browserLang : 'en');
   }
 }
